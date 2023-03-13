@@ -8,7 +8,6 @@ A simple authentication service written in Go, just for learning [Service Weaver
 
 ### Prerequisites
 
-- [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### Setup
@@ -20,11 +19,7 @@ cd simple-auth-sw
 ```
 2. Create `db.env` file in the root directory of this project, and fill in the environment variables according to `db.env.example`.
 3. Create `weaver.toml` file in the root directory of this project, and fill in the variables according to `weaver.toml.example`.
-4. Build the app image.
-```bash
-docker build -t simple-auth-sw .
-```
-5. Start the database and the app. The app will be available at <http://localhost:8888>
+4. Start the database and the app. The app will be available at <http://localhost:8888>
 ```bash
 docker compose up -d
 ```

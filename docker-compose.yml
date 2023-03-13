@@ -21,7 +21,7 @@ services:
     environment:
       ADMINER_DEFAULT_SERVER: database
   simple-auth-sw:
-    image: simple-auth-sw
+    image: wst24365888/simple-auth-sw:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -30,5 +30,12 @@ services:
       - 8888:8888
     depends_on:
       - database
+    volumes:
+      - ./weaver.toml/:/app/weaver.toml
+    command: 
+      - "weaver"
+      - "multi"
+      - "deploy"
+      - "weaver.toml"
 volumes:
   pgdata:

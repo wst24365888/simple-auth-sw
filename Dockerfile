@@ -15,8 +15,5 @@ FROM golang:1.20
 RUN go install github.com/ServiceWeaver/weaver/cmd/weaver@latest
 
 COPY --from=builder /app/simple-auth-sw /app/simple-auth-sw
-COPY --from=builder /app/weaver.toml /app/weaver.toml
 
 WORKDIR /app
-
-CMD ["weaver", "multi", "deploy", "weaver.toml"]
