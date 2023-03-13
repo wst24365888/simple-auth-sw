@@ -1,0 +1,21 @@
+[serviceweaver]
+name = "simple-auth-sw"
+binary = "./simple-auth-sw"
+env = ["ADDR=0.0.0.0", "PORT=8888", "SECRET=secret"]
+rollout = "1m"
+
+["github.com/wst24365888/simple-auth-sw/RegisterHandler"]
+DRIVER = "postgres"
+HOST = "database"
+PORT = "5432"
+USER = "admin"
+PASSWORD = "12345"
+DBNAME = "mydb"
+
+["github.com/wst24365888/simple-auth-sw/LoginHandler"]
+DRIVER = "postgres"
+HOST = "database"
+PORT = "5432"
+USER = "admin"
+PASSWORD = "12345"
+DBNAME = "mydb"
